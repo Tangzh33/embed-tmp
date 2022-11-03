@@ -1,0 +1,223 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[UTF8]{ctex}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{enumitem}
+% Template for pseudo-code
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+% Preset for real code
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+% \lstset{frame=shadowbox,
+%     language=c++,
+%     aboveskip=3mm,
+%     belowskip=3mm,
+%     showstringspaces=false,
+%     columns=flexible,
+%     basicstyle={\small\ttfamily},
+%     numbers=left,
+%     numberstyle=\tiny\color{gray},
+%     keywordstyle=\color{blue},
+%     stringstyle=\color{mauve},
+%     breaklines=true,
+%     breakatwhitespace=true,
+%     tabsize=3
+% }
+\lstdefinestyle{c++}{
+   frame=shadowbox,
+    language=c++,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3
+}
+\lstdefinestyle{bash}{
+   frame=shadowbox,
+    language=bash,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3
+}
+\lstdefinestyle{python}{
+   frame=shadowbox,
+    language=python,
+    aboveskip=3mm,
+    belowskip=3mm,
+    showstringspaces=false,
+    columns=flexible,
+    basicstyle={\small\ttfamily},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    keywordstyle=\color{blue},
+    stringstyle=\color{mauve},
+    breaklines=true,
+    breakatwhitespace=true,
+    tabsize=3
+}
+
+%目录的颜色修改
+\usepackage[colorlinks,linkcolor=black]{hyperref}
+\geometry{scale=0.8}
+\begin{document}
+\thispagestyle{empty}
+\pagestyle{fancy}
+%\fancyhf{} % 清空当前的页眉页脚
+\lhead{\small\leftmark}   %页眉左侧显示页数                 
+\chead{嵌入式系统Project\ 1}                                  %页眉中
+\rhead{\small\rightmark}                         %章节信息                       
+\cfoot{\thepage}                                %当前页，记得调用前文提到的宏包                
+%\rfoot{页脚左}                                                   
+\renewcommand{\headrulewidth}{0.4pt} 
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{center}
+    
+    \phantom{Start!}
+	\vspace{2cm}
+	
+	\begin{figure}[ht]
+	\includegraphics[width=400pt]{logo.png} 
+	\end{figure}
+	
+    \center{
+		\textbf{\zihao{1} 嵌入式系统}\\
+		  \vspace{0.25cm}
+       	  \textbf{\zihao{1} Project 1}\\
+       	  \vspace{0.5cm}
+          \textbf{\zihao{3} （2022 学年 秋 季 学期）}        
+    }
+    \vspace{3.5cm}
+    \begin{table}[!hbp]
+    \centering
+	\setlength{\abovecaptionskip}{1pt}
+    \renewcommand\arraystretch{1.5}
+     	\begin{tabular}{|c|c|}
+     		\hline
+     		\large ~~课程名称~~ &\large ~~~~~~嵌入式系统~~~~~~ \\
+     		\hline
+     		\large 学院 &\large 计算机学院 \\
+     		\hline
+     		\large ~~授课教师~~ &\large 黄凯 \\
+			\hline
+			\large 学生姓名 &\large {\CJKfontspec{SIMSUN.TTC} 唐喆} \\
+			\hline
+			\large 学号 &\large 20337111 \\
+			\hline
+			\large 专业 &\large 计算机科学与技术 \\
+			\hline
+			\large Email &\large ~~~~~~tangzh\_33@163.com~~~~~~ \\
+			\hline
+			\large 完成时间 &  \multicolumn{1}{c|}{\large 2022年11月3日}\\
+     		\hline
+         \end{tabular}     		
+     \end{table}
+\end{center}
+
+\title{	
+    \normalfont \normalsize
+    \textsc{School of Computer Science and Engineering, Sun Yat-sen University} \\ [25pt] %textsc small capital letters
+    \rule{\textwidth}{0.5pt} \\[0.1cm] % Thin top horizontal rule
+    \huge  嵌入式系统Homework\ 1\\ % The assignment title
+    \rule{\textwidth}{2pt} \\[0.1cm] % Thick bottom horizontal rule
+    \author{20337111   \CJKfontspec{SIMSUN.TTC}唐喆}
+    \date{\normalsize 2022年11月3日}
+}
+
+
+\maketitle
+\thispagestyle{empty}
+\pdfbookmark[0]{目录}{toc}
+\tableofcontents
+\newpage
+
+
+\section{论文阅读}
+\subsection{A Model-Based Design Methodology for Cyber-Physical Systems}
+\subsection{An Efficient Heuristic Procedure for Partitioning 
+Graphs}
+
+
+\section{死锁复现}
+\subsection{源代码}
+\subsection{An Efficient Heuristic Procedure for Partitioning 
+Graphs}
+% \section{Gem5 Hands-on}
+% \subsection{Environment Setup and Build}
+
+% \subsubsection{实验要求}
+% Install gem5 on your own machines.
+
+% \subsubsection{软硬件环境说明}
+% 从掌握应用依赖、熟悉应用编译流程的角度出发，本次实验我选择在本机的WSL虚拟机\textbf{手动编译安装}。首先，本次实验的软硬件平台基本信息如下：
+% \begin{table}[!ht]
+%     \centering
+%     \begin{tabular}{cc}
+%     \hline
+%         \textbf{Environment} & \textbf{Details} \\ \hline
+%         CPU & 8核 \\ 
+%         RAM & 16G \\ 
+%         OS & WSL2-Ubuntu1804 \\ \hline
+%     \end{tabular}
+%     \caption{Software \& Hardware Environment}
+% \end{table}
+
+% \subsubsection{依赖安装与编译}
+% \begin{itemize}
+%     \item \textbf{依赖安装} \\
+%     根据\textcolor{blue}{\href{https://www.gem5.org/documentation/general_docs/building}{官网教程}}，我们可以知道依赖安装指令如下：
+%     \begin{lstlisting}[style=bash]
+% sudo apt-get update
+% sudo apt install -y build-essential git m4 scons zlib1g zlib1g-dev \
+%     libprotobuf-dev protobuf-compiler libprotoc-dev libgoogle-perftools-dev \
+%     python3-dev python libboost-all-dev pkg-config
+%     \end{lstlisting}
+%     \item \textbf{源码下载} \\
+%     谷歌源不能用，所以我使用Github的源代码：
+%     \begin{lstlisting}[style=bash]
+% git clone https://github.com/gem5/gem5.git
+%     \end{lstlisting}
+%     \item \textbf{安装} \\
+%     根据官网教程和命令行提示，我们使用scons编译如下：
+%     \begin{lstlisting}[style=bash]
+% cd gem5
+% /usr/bin/env python3 $(which scons) build/X86/gem5.opt -j8
+%     \end{lstlisting}
+% \end{itemize}
+
+\end{document}
